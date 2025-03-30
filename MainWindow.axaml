@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        Width="600" Height="400"
+        x:Class="Simple_Unit_Converter.MainWindow"
+        Title="Ultimate Unit Converter"
+        FontFamily="Segoe UI">
+        
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" 
+                   HorizontalAlignment="Center" Spacing="10">
+            <TextBlock Text="🔄" FontSize="32"/>
+            <TextBlock Text="ULTIMATE UNIT CONVERTER" 
+                      FontSize="24" FontWeight="Bold" Foreground="#333"/>
+        </StackPanel>
+
+        <!-- Category Selection -->
+        <ComboBox x:Name="CategoryComboBox" Grid.Row="1" Grid.ColumnSpan="2"
+                 PlaceholderText="Select Category" 
+                 Margin="0 10" HorizontalContentAlignment="Center"/>
+
+        <!-- Conversion Selection -->
+        <ComboBox x:Name="ConversionComboBox" Grid.Row="2" Grid.ColumnSpan="2"
+                 PlaceholderText="Select Conversion Type"
+                 HorizontalContentAlignment="Center"/>
+
+        <!-- Input Section -->
+        <TextBox x:Name="InputValue" Grid.Row="3" Grid.Column="0"
+                Watermark="Enter value to convert"
+                FontSize="16" Margin="0 0 10 0"
+                TextAlignment="Center"
+                CornerRadius="8"
+                Padding="10"/>
+
+        <!-- Result Preview -->
+        <Border Grid.Row="3" Grid.Column="1" 
+               Background="#F5F5F5" Margin="10 0 0 0"
+               CornerRadius="8" Padding="10">
+            <TextBlock x:Name="ResultText" 
+                      FontSize="16"
+                      TextAlignment="Center"
+                      VerticalAlignment="Center"
+                      Foreground="#666"/>
+        </Border>
+
+        <!-- Convert Button -->
+        <Button x:Name="ConvertButton" Grid.Row="4" Grid.ColumnSpan="2"
+               Content="CONVERT NOW"
+               HorizontalAlignment="Center"
+               Margin="0 20"
+               Background="#2196F3"
+               Foreground="White"
+               Padding="20 10"
+               CornerRadius="8"
+               FontSize="14"
+               FontWeight="Bold"/>
+    </Grid>
+</Window>
